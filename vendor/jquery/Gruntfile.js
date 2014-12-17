@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         var next = this.async();
         grunt.util.spawn({
             cmd: 'grunt',
-            args: ['build'],
+            args: ['build:*:*'],
             opts: {
                 cwd: './repo'
             }
