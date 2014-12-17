@@ -1,6 +1,6 @@
 define(["backbone", "underscore", "cs!routers/main"], function(Backbone, _, Router) {
     var App = function App(options) {
-        var el = options.el
+        var el = options.el;
 
         if (!el) {
             throw new Error("App requires an element to bind to");
@@ -21,7 +21,7 @@ define(["backbone", "underscore", "cs!routers/main"], function(Backbone, _, Rout
         options.el = el;
 
         return new App(options);
-    }
+    };
 
     _.extend(App.prototype, Backbone.Events);
 
