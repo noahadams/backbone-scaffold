@@ -12,7 +12,7 @@ module.exports = function(grunt) {
             if (result.stdout) grunt.log.write(result.stdout);
             if (result.stderr) grunt.log.error(result.stderr);
             
-            if (error) return next(false);    
+            if (error) return next(false);
             return next();
         });
     });
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         var next = this.async();
         grunt.util.spawn({
             cmd: 'grunt',
-            args: ['default'],
+            args: ['build'],
             opts: {
                 cwd: './repo'
             }
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             if (result.stderr) grunt.log.error(result.stderr);
             
             if (error) {
-                return next(false);    
+                return next(false);
             } else {
                 grunt.file.copy('repo/dist/jquery.js', 'jquery.js');
             
